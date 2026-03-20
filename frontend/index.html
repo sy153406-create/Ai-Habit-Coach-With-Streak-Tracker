@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Habit Coach - Build Habits. Track Progress. Stay Consistent.</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/font-sizes.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-brand-side">
+      <div class="auth-brand-logo">🎯</div>
+      <h2 class="auth-brand-title">AI Habit Coach</h2>
+      <p class="auth-brand-tagline">Build habits. Track progress. Stay consistent.</p>
+    </div>
+
+    <div class="auth-form-side">
+      <div class="auth-box">
+        <div class="auth-header">
+          <h1>Welcome Back</h1>
+          <p>Sign in to your account</p>
+        </div>
+
+      <!-- Error Message -->
+      <div id="errorMessage" class="error-message"></div>
+      <div id="successMessage" class="success-message"></div>
+
+        <!-- Login Form (Default) -->
+        <form id="loginForm" class="auth-form">
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Sign In</button>
+        </form>
+
+        <!-- Sign Up Form (Hidden by default) -->
+        <form id="signupForm" class="auth-form hidden">
+          <div class="form-group">
+            <label for="signupName">Full Name</label>
+            <input
+              type="text"
+              id="signupName"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="signupEmail">Email Address</label>
+            <input
+              type="email"
+              id="signupEmail"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <input
+              type="password"
+              id="signupPassword"
+              placeholder="At least 6 characters"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="signupConfirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="signupConfirmPassword"
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Create Account</button>
+        </form>
+
+        <!-- Toggle Form Link -->
+        <div class="auth-footer">
+          <span id="toggleText">Don't have an account? <a href="#" id="toggleLink">Sign Up</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Habits - AI Habit Coach</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/responsive.css">
+  <link rel="stylesheet" href="assets/font-sizes.css">
+  <style>
+    /* My Habits Page Specific Styles */
+    .habit-templates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .category-section {
+      margin-bottom: 40px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1f3a;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #00D4FF;
+    }
+  </style>
+</head>
+<body>
+  <div class="habits-container">
+    <!-- Header -->
+    <div class="habits-header">
+      <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+      <h1>🎯 Create Your Habits</h1>
+      <p>Choose from templates or create custom habits to build consistency</p>
+    </div>
+
+    <!-- Templates Section -->
+    <div class="templates-section">
+      <div class="templates-title">📚 Habit Templates</div>
+
+      <!-- Health Category -->
+      <div class="category-section">
+        <div class="category-header">❤️ Health & Fitness</div>
+        <div class="habit-templates">
+          <div class="template-card" onclick="selectTemplate('Drink 8 glasses of water', 'Health', 'Low', 15)">
+            <div class="template-name">💧 Drink 8 Glasses of Water</div>
+            <div class="template-category">Health</div>
+            <div class="template-time">⏱️ 15 minutes</div>
+            <div class="template-difficulty">Low</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Exercise 30 minutes', 'Health', 'High', 30)">
+            <div class="template-name">🏃 Exercise 30 Minutes</div>
+            <div class="template-category">Health</div>
+            <div class="template-time">⏱️ 30 minutes</div>
+            <div class="template-difficulty">High</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Get 8 hours sleep', 'Health', 'Moderate', 0)">
+            <div class="template-name">😴 Get 8 Hours Sleep</div>
+            <div class="template-category">Health</div>
+            <div class="template-time">⏱️ Sleep tracking</div>
+            <div class="template-difficulty">Moderate</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Take a 10-minute walk', 'Health', 'Low', 10)">
+            <div class="template-name">🚶 Take a 10-Minute Walk</div>
+            <div class="template-category">Health</div>
+            <div class="template-time">⏱️ 10 minutes</div>
+            <div class="template-difficulty">Low</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Productivity Category -->
+      <div class="category-section">
+        <div class="category-header">💼 Productivity & Learning</div>
+        <div class="habit-templates">
+          <div class="template-card" onclick="selectTemplate('Read 20 minutes', 'Productivity', 'Moderate', 20)">
+            <div class="template-name">📖 Read 20 Minutes</div>
+            <div class="template-category">Productivity</div>
+            <div class="template-time">⏱️ 20 minutes</div>
+            <div class="template-difficulty">Moderate</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Write journal', 'Productivity', 'Low', 15)">
+            <div class="template-name">📝 Write Journal Entry</div>
+            <div class="template-category">Productivity</div>
+            <div class="template-time">⏱️ 15 minutes</div>
+            <div class="template-difficulty">Low</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Learn 15 minutes', 'Productivity', 'Moderate', 15)">
+            <div class="template-name">🎓 Learn Something New (15 min)</div>
+            <div class="template-category">Productivity</div>
+            <div class="template-time">⏱️ 15 minutes</div>
+            <div class="template-difficulty">Moderate</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Organize workspace', 'Productivity', 'Low', 20)">
+            <div class="template-name">🗂️ Organize Workspace</div>
+            <div class="template-category">Productivity</div>
+            <div class="template-time">⏱️ 20 minutes</div>
+            <div class="template-difficulty">Low</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mindfulness Category -->
+      <div class="category-section">
+        <div class="category-header">🧘 Mindfulness & Wellness</div>
+        <div class="habit-templates">
+          <div class="template-card" onclick="selectTemplate('Meditate 10 minutes', 'Mindfulness', 'Low', 10)">
+            <div class="template-name">🧘 Meditate 10 Minutes</div>
+            <div class="template-category">Mindfulness</div>
+            <div class="template-time">⏱️ 10 minutes</div>
+            <div class="template-difficulty">Low</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Practice gratitude', 'Mindfulness', 'Low', 10)">
+            <div class="template-name">🙏 Practice Gratitude</div>
+            <div class="template-category">Mindfulness</div>
+            <div class="template-time">⏱️ 10 minutes</div>
+            <div class="template-difficulty">Low</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Deep breathing exercise', 'Mindfulness', 'Low', 5)">
+            <div class="template-name">🌬️ Deep Breathing</div>
+            <div class="template-category">Mindfulness</div>
+            <div class="template-time">⏱️ 5 minutes</div>
+            <div class="template-difficulty">Low</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Digital detox 1 hour', 'Mindfulness', 'Moderate', 60)">
+            <div class="template-name">📵 Digital Detox (1 hour)</div>
+            <div class="template-category">Mindfulness</div>
+            <div class="template-time">⏱️ 60 minutes</div>
+            <div class="template-difficulty">Moderate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal Growth Category -->
+      <div class="category-section">
+        <div class="category-header">🌱 Personal Growth</div>
+        <div class="habit-templates">
+          <div class="template-card" onclick="selectTemplate('Practice new skill', 'Personal Growth', 'High', 30)">
+            <div class="template-name">🎯 Practice New Skill</div>
+            <div class="template-category">Personal Growth</div>
+            <div class="template-time">⏱️ 30 minutes</div>
+            <div class="template-difficulty">High</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Connect with friend', 'Personal Growth', 'Low', 20)">
+            <div class="template-name">👥 Connect with Friend</div>
+            <div class="template-category">Personal Growth</div>
+            <div class="template-time">⏱️ 20 minutes</div>
+            <div class="template-difficulty">Low</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Review daily goals', 'Personal Growth', 'Low', 10)">
+            <div class="template-name">🎯 Review Daily Goals</div>
+            <div class="template-category">Personal Growth</div>
+            <div class="template-time">⏱️ 10 minutes</div>
+            <div class="template-difficulty">Low</div>
+          </div>
+
+          <div class="template-card" onclick="selectTemplate('Reflect on achievements', 'Personal Growth', 'Moderate', 15)">
+            <div class="template-name">✨ Reflect on Achievements</div>
+            <div class="template-category">Personal Growth</div>
+            <div class="template-time">⏱️ 15 minutes</div>
+            <div class="template-difficulty">Moderate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Habit Section -->
+    <div class="custom-habit-section">
+      <h2 class="form-section-title">✨ Create Custom Habit</h2>
+
+      <form id="customHabitForm" class="custom-form">
+        <div class="form-group">
+          <label for="habitTitle">Habit Name *</label>
+          <input
+            type="text"
+            id="habitTitle"
+            placeholder="e.g., Morning Yoga"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="habitDescription">Description</label>
+          <textarea
+            id="habitDescription"
+            placeholder="Describe your habit in detail..."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="habitCategory">Category *</label>
+          <select id="habitCategory" required>
+            <option value="">-- Select Category --</option>
+            <option value="Health">❤️ Health</option>
+            <option value="Productivity">💼 Productivity</option>
+            <option value="Mindfulness">🧘 Mindfulness</option>
+            <option value="Personal Growth">🌱 Personal Growth</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="habitDifficulty">Difficulty Level *</label>
+          <select id="habitDifficulty" required>
+            <option value="">-- Select Difficulty --</option>
+            <option value="Low">Low (Easy)</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High (Challenging)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="estimatedTime">Estimated Time (minutes)</label>
+          <input
+            type="number"
+            id="estimatedTime"
+            placeholder="30"
+            min="5"
+            max="300"
+          />
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-submit">✅ Create Habit</button>
+          <button type="button" class="btn-cancel" onclick="window.location.href='dashboard.html'">Cancel</button>
+        </div>
+
+        <div id="formMessage" class="error-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = 'http://localhost:5000/api';
+
+    // Check authentication
+    function checkAuth() {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        window.location.href = 'index.html';
+        return false;
+      }
+      return token;
+    }
+
+    // Get Authorization Header
+    function getAuthHeader() {
+      return {
+        'Authorization': `Bearer ${checkAuth()}`,
+        'Content-Type': 'application/json',
+      };
+    }
+
+    // Select Template
+    function selectTemplate(title, category, difficulty, time) {
+      document.getElementById('habitTitle').value = title;
+      document.getElementById('habitCategory').value = category;
+      document.getElementById('habitDifficulty').value = difficulty;
+      document.getElementById('estimatedTime').value = time;
+
+      // Scroll to form
+      document.querySelector('.custom-habit-section').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('habitTitle').focus();
+    }
+
+    // Create Habit Form
+    document.getElementById('customHabitForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById('habitTitle').value;
+      const description = document.getElementById('habitDescription').value;
+      const category = document.getElementById('habitCategory').value;
+      const difficulty = document.getElementById('habitDifficulty').value;
+      const estimatedTime = parseInt(document.getElementById('estimatedTime').value) || 30;
+
+      try {
+        const response = await fetch(`${API_BASE}/habits/create`, {
+          method: 'POST',
+          headers: getAuthHeader(),
+          body: JSON.stringify({
+            title,
+            description,
+            category,
+            difficulty,
+            estimatedTime,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          showMessage(data.message || 'Failed to create habit', true);
+          return;
+        }
+
+        showMessage('✅ Habit created successfully! Redirecting...', false);
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 1500);
+      } catch (error) {
+        console.error('Create habit error:', error);
+        showMessage('Connection error. Please try again.', true);
+      }
+    });
+
+    // Show Form Message
+    function showMessage(message, isError) {
+      const messageEl = document.getElementById('formMessage');
+      messageEl.textContent = message;
+      messageEl.className = isError ? 'error-message show' : 'success-message';
+      messageEl.style.display = 'block';
+
+      if (!isError) {
+        setTimeout(() => {
+          messageEl.style.display = 'none';
+        }, 2000);
+      }
+    }
+
+    // Initialize
+    window.addEventListener('load', () => {
+      checkAuth();
+    });
+  </script>
+</body>
+</html>
